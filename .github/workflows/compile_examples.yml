@@ -1,0 +1,33 @@
+name: Build LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v1
+      - name: Compile che_homework.tex with LuaLaTeX
+        uses: dante-ev/latex-action@master
+        with:
+          root_file: examples/che_homework.tex
+          compiler: latexmk
+          args: -lualatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+      - name: Compile apa_report.tex with LuaLaTeX
+        uses: dante-ev/latex-action@master
+        with:
+          root_file: examples/apa_report.tex
+          compiler: latexmk
+          args: -lualatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+      - name: Compile che_homework.tex with pdfLaTeX
+        uses: dante-ev/latex-action@master
+        with:
+          root_file: examples/che_homework.tex
+          compiler: latexmk
+          args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+      - name: Compile apa_report.tex with pdfLaTeX
+        uses: dante-ev/latex-action@master
+        with:
+          root_file: examples/apa_report.tex
+          compiler: latexmk
+          args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+              
