@@ -1,3 +1,4 @@
+![Build LaTeX document](https://github.com/ahoetker/LaTeX-Packages/workflows/Build%20LaTeX%20document/badge.svg)
 # LaTeX-Packages
 My most commonly used preambles, packaged as .sty files.
 
