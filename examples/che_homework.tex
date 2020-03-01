@@ -1,0 +1,31 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{../chehomework}
+
+% Document-specific information
+\title{Really Cool Chemical Engineering Homework}
+\author{Andrew Hoetker}
+\addbibresource{sources.bib}
+
+% Bibliography resources files
+\addbibresource{sources.bib}
+
+% Lorem ipsum
+\usepackage{blindtext}
+
+% Packages that need to be loaded last
+\usepackage{subfiles}
+
+\begin{document}
+    \maketitle
+
+    \section{Showing off some features}
+
+    Let's see some useful tricks! To start, I love the \texttt{siunitx} package, but it doesn't always have the US engineering units I need! With the custom units defined in my packages, I can now state with confidence that \SI{1}{\cfm} is equal to \SI{0.471947}{\liter\per\second}.
+
+    \section{Adding some citations}
+
+    One of the best features of the \LaTeX\ document system is citation management. By citing some irrelevant heat transfer papers \autocite{bohnetFoulingHeatTransfer1987,prabhanjanComparisonHeatTransfer2002}, we can see how our citations and bibliography are styled \autocite{wongLogMeanHeat2009}.
+
+    \printbibliography
+
+\end{document}
