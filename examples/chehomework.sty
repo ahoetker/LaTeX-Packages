@@ -1,0 +1,102 @@
+\ProvidesPackage{chehomework}
+
+\usepackage{ifluatex} % conditional compilation based on TeX engine
+
+% LuaLaTeX packages
+% These packages are specific to LuaLaTeX, my LaTeX engine of choice. 
+% If you want to learn more about the various TeX engines, check out:
+% https://www.overleaf.com/learn/latex/Articles/The_TeX_family_tree:_LaTeX,_pdfTeX,_XeTeX,_LuaTeX_and_ConTeXt
+\ifluatex
+	\usepackage{fontspec}
+	\usepackage{luacode}
+	\usepackage{metalogo}
+	\usepackage{luatexbase}
+\else
+	{}
+\fi
+
+
+% Math environments
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\ifluatex
+	\usepackage{lualatex-math}
+\else
+	{}
+\fi
+
+% Chemical formulas
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+% SI units and friends
+% This is a great package!
+\usepackage[separate-uncertainty=true,per-mode=symbol]{siunitx}
+\DeclareSIUnit\Fahrenheit{\degree F}
+\DeclareSIUnit\pound{lb}
+\DeclareSIUnit\poundmass{lb\textsubscript{m}}
+\DeclareSIUnit\foot{ft}
+\DeclareSIUnit\atm{atm}
+\DeclareSIUnit\poise{P}
+\DeclareSIUnit\gallon{gal}
+\DeclareSIUnit\cfm{\cubic\foot\per\minute}
+
+% Page layout
+\usepackage[margin=1in,paper=letterpaper]{geometry}
+\usepackage{setspace}
+
+% Automatic improvements
+% These packages will make the document subtly better without needing to be called
+% in the document. If you want to know exactly what they're doing, read the 
+% package documentation.
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{xurl}
+
+% Header definition
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+
+% Fonts and typography
+\ifluatex
+	\usepackage{unicode-math}
+	\setmainfont[BoldFont={STIX2Text-Bold.otf},ItalicFont={STIX2Text-Italic.otf}]{STIX2Text-Regular.otf}
+	\setmathfont{STIX2Math.otf}
+\else
+	\usepackage{stix}
+\fi
+
+% Bibliography
+\usepackage[backend=biber,style=nature,citestyle=nature,defernumbers=true]{biblatex}
+
+% Fancy references and links
+\usepackage{varioref}
+% Hyperlinks
+% These will turn internal cross-references, in-text citations,
+% and headings into clickable links in the PDF. The link text
+% will still be black.
+\usepackage{color}
+\usepackage[%
+	pdfborder=0,
+	colorlinks=true,
+	urlcolor=black,
+	linkcolor=black,
+	citecolor=black]{hyperref}
+\usepackage{cleveref}
+
+% Figures and captions
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage[title,titletoc]{appendix}
+\usepackage[section]{placeins}
+\usepackage{pdfpages}
+\usepackage{subcaption}
+
+% Title page without page number
+\usepackage{titling}
